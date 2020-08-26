@@ -1,3 +1,6 @@
+// Подключаем переменные окружения. Помимо настройки самого Вебпака они могут понадобиться в самом бандле, в который могут быть переданы через webpack.DefinePlugin()
+require('./config')
+
 const path = require('path')
 const mode = process.env.NODE_ENV || 'development'
 
@@ -15,6 +18,9 @@ const CopyPlugin = require('copy-webpack-plugin')
 
 // Модуль для преобразования блоков <style lang="scss"> внутри .svelte-файлов
 const { sass } = require('svelte-preprocess-sass')
+
+// Модуль Вебпака для доступа к предустановленным плагинам
+const webpack = require('webpack')
 
 // Конфиг Вебпака
 module.exports = {
@@ -84,6 +90,15 @@ module.exports = {
   plugins: [
     // Очищает папку /dist перед каждой итерацией
     new CleanWebpackPlugin(),
+
+    /* 
+      Подставляет вместо констант их реальные значения во время сборки. Для переменных окружения из process.env необходимо предварительно импортировать файл config.js, который их подключает из .env-файла.
+      
+      Плагин производит прямую замену текста, поэтому значения должны содержать кавычки ('"base"') или указываться через JSON.stringify(). Подробнее: https://webpack.js.org/plugins/define-plugin/#usage
+    */
+    new webpack.DefinePlugin({
+      URL_BASE: JSON.stringify(process.env.URL_BASE || '')
+    }),
 
     // Создает в папке /dist файл index.html на основе шаблона src/ и добавляет в него ссылку на js- и css-бандлы
     new HtmlWebpackPlugin({
