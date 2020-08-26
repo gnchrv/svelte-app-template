@@ -1,0 +1,30 @@
+{
+  "name": "svelte-app-template",
+  "version": "1.0.0",
+  "devDependencies": {
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.0.3",
+    "css-loader": "^2.1.1",
+    "file-loader": "^6.0.0",
+    "html-webpack-plugin": "^4.3.0",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^0.23.1",
+    "svelte": "^3.24.1",
+    "svelte-loader": "2.13.3",
+    "svelte-preprocess-sass": "^0.2.0",
+    "tinro": "^0.2.10",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production webpack",
+    "dev": "webpack-dev-server --content-base dist",
+    "start": "sirv dist --single --port $PORT"
+  },
+  "dependencies": {
+    "sirv-cli": "^1.0.6"
+  }
+}
