@@ -19,7 +19,7 @@ src/
 
 ## Маршрутизация
 В качестве роутера используется [svelte-routing](https://www.npmjs.com/package/svelte-routing). Пути настраиваются в файле `src/App.svelte` c помощью компонентов: 
-```javascript
+```html
 <Router basepath="{base}">
   <Route path="/"><Index /></Route>
   <Route path="/about/"><About /></Route>
@@ -28,7 +28,7 @@ src/
 ```
 
 Для навигации между страницами приложения вместое нативных ссылок `<a href="…"></a>` используются компоненты `<Link>`:
-```javascript
+```html
 <Link to="/">Главная</Link>
 <Link to="about">О компании</Link>
 <Link to="contacts">Контакты</Link>
