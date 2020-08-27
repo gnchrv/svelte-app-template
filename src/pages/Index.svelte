@@ -1,4 +1,8 @@
 <script>
+  // Испортируем компонент роутера для ссылки для навигации между страницами приложения
+  import { Link } from 'svelte-routing'
+  
+  // Импортируем компонент поля ввода с привязанной к нему надписью
   import Input from '../components/Input.svelte'
 
   let title = 'Главная страница'
@@ -7,4 +11,4 @@
 
 <h1>{title}</h1>  
 <Input {name} />
-<a href="/about">О компании</a>
+<Link to="about">О компании</Link>
