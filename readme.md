@@ -20,7 +20,7 @@ src/
 ## Маршрутизация
 В качестве роутера используется [svelte-routing](https://www.npmjs.com/package/svelte-routing). Пути настраиваются в файле `src/App.svelte` c помощью компонентов: 
 ```html
-<Router basepath="{base}">
+<Router>
   <Route path="/"><Index /></Route>
   <Route path="/about/"><About /></Route>
   <Route path="*"><NotFound /></Route>
