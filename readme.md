@@ -18,7 +18,21 @@ src/
 ```
 
 ## Маршрутизация
-В качестве роутера используется [svelte-routing](https://www.npmjs.com/package/svelte-routing). Пути настраиваются в файле `src/App.svelte` c помощью компонентов `<Router />` и `<Route />`. Для навигации между страницами приложения используются компоненты `<Link to="…">Ссылка</Link>`.
+В качестве роутера используется [svelte-routing](https://www.npmjs.com/package/svelte-routing). Пути настраиваются в файле `src/App.svelte` c помощью компонентов: 
+```javascript
+<Router basepath="{base}">
+  <Route path="/"><Index /></Route>
+  <Route path="/about/"><About /></Route>
+  <Route path="*"><NotFound /></Route>
+</Router>
+```
+
+Для навигации между страницами приложения вместое нативных ссылок `<a href="…"></a>` используются компоненты `<Link>`:
+```javascript
+<Link to="/">Главная</Link>
+<Link to="about">О компании</Link>
+<Link to="contacts">Контакты</Link>
+```
 
 Пути к статическим файлам должны начинаться со слеша: например, `src="/img/logo.jpg"`. Это необходимо, чтобы приложение обращалось к одной и той же папке вне зависимости от вложенности УРЛ. Если не добавить слеш, при поиске статических файлов на странице `example.com/sub/folder` сервер будет обращаться к папке `example.com/sub/folder/static` вместо `example.com/static`. В результате файлы не будут найдены — даже `main.js`, файл самого приложения. Пользователь будет видеть пустую страницу.
 
