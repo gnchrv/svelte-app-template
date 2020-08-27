@@ -5,4 +5,5 @@
 
 <h1>{title}</h1>
 <p>{text}</p>
+<img src="/img/logo.jpg" alt="Флаг России">
 
