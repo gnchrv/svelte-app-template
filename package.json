@@ -15,7 +15,7 @@
     "svelte": "^3.24.1",
     "svelte-loader": "2.13.3",
     "svelte-preprocess-sass": "^0.2.0",
-    "tinro": "^0.2.10",
+    "svelte-routing": "^1.4.2",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
