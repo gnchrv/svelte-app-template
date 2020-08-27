@@ -98,7 +98,7 @@ module.exports = {
       Плагин производит прямую замену текста, поэтому значения должны содержать кавычки ('"base"') или указываться через JSON.stringify(). Подробнее: https://webpack.js.org/plugins/define-plugin/#usage
     */
     new webpack.DefinePlugin({
-      URL_BASE: JSON.stringify(process.env.URL_BASE || '')
+      URL_BASE: JSON.stringify(process.env.URL_BASE)
     }),
 
     // Создает в папке /dist файл index.html на основе шаблона src/ и добавляет в него ссылку на js- и css-бандлы
