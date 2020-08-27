@@ -47,7 +47,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     chunkFilename: '[name].[id].js',
-    publicPath: '/'
+    publicPath: process.env.FOLDER_BASE || '/'
   },
 
   module: {
