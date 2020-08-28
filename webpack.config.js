@@ -47,7 +47,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     chunkFilename: '[name].[id].js',
-    publicPath: process.env.FOLDER_BASE || '/'
+    publicPath: process.env.STATIC_BASEPATH || '/'
   },
 
   module: {
@@ -98,8 +98,8 @@ module.exports = {
       Плагин производит прямую замену текста, поэтому значения должны содержать кавычки ('"base"') или указываться через JSON.stringify(). Подробнее: https://webpack.js.org/plugins/define-plugin/#usage
     */
     new webpack.DefinePlugin({
-      URL_BASE: JSON.stringify(process.env.URL_BASE),
-      FOLDER_BASE: JSON.stringify(process.env.FOLDER_BASE)
+      APP_BASEPATH: JSON.stringify(process.env.APP_BASEPATH),
+      STATIC_BASEPATH: JSON.stringify(process.env.STATIC_BASEPATH)
     }),
 
     // Создает в папке /dist файл index.html на основе шаблона src/ и добавляет в него ссылку на js- и css-бандлы
