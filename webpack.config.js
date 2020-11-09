@@ -116,8 +116,16 @@ module.exports = {
     // Переносит статические файлы, не относящиеся к стилям и html-шаблонам
     new CopyPlugin({
       patterns: [
-        { from: 'src/img', to: 'img' },
-        { from: 'src/fonts', to: 'fonts' },
+        { 
+            from: 'src/img', 
+            to: 'img',
+            noErrorOnMissing: true
+        },
+        { 
+            from: 'src/fonts', 
+            to: 'fonts',
+            noErrorOnMissing: true
+        },
       ]
     })
   ]
